@@ -1,0 +1,44 @@
+
+<app-navegacion></app-navegacion>
+<div class="container mt-4">
+  <h2>SOLICITA TU PRESTAMO DE LIBRO</h2>
+  <hr>
+  <!--nuestro evento submit de formulario-->
+  <form (submit)="registrarPrestamo()">
+    <div class="mb-3">
+      <label class="form-label">LIBRO</label>
+      <select class="form-select" [(ngModel)]="prestamo.libro" name="libro" required>
+        <option value="" disabled selected>ElIGE UN LIBRO</option>
+        <!--ngfor es un repetido como un FOR en js , por cada libro en la lista creale su option-->
+        <option *ngFor="let l of librosService.libros()" [value]="l.titulo">{{ l.titulo }}</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">DNI</label>
+      <input type="text" class="form-control" [(ngModel)]="prestamo.dni" name="dni" placeholder="Ingrese su DNI" required>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label class="form-label">NOMBRE A CARGO</label>
+        <input type="text" class="form-control" [(ngModel)]="prestamo.nombre" name="nombre" placeholder="Ingrese su nombre" required>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label class="form-label">Apellido</label>
+        <input type="text" class="form-control" [(ngModel)]="prestamo.apellido" name="apellido" placeholder="Ingrese su apellido" required>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">DURACION DEL PRESTAMO</label>
+      <select class="form-select" [(ngModel)]="duracion" name="duracion">
+        <!--[ngValue] es como value pero va a respetar el tipo de dato si pasamoos "7" lo vale como 7-->
+        <option [ngValue]="7">7 dias</option>
+        <option [ngValue]="14">14 dias</option>
+        <option [ngValue]="21">21 dias</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">SOLICITAR</button>
+  </form>
+</div>

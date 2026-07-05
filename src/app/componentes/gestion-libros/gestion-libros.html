@@ -1,0 +1,32 @@
+<app-navegacion></app-navegacion>
+<div class="container mt-4">
+  <h2 class="mb-4">GESTION DE LIBROS</h2>
+
+  <div class="card shadow-sm mb-4">
+    <div class="card-body">
+      <h5 class="card-title">Agregar nuevo libro</h5>
+      <div class="input-group">
+        <input type="text" class="form-control" [(ngModel)]="nuevoLibro" placeholder="Titulo del libro" (keyup.enter)="agregar()">
+        <button class="btn btn-primary" (click)="agregar()">AGREGAR</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h5 class="card-title mb-3">Libros disponibles ({{ librosService.libros().length }})</h5>
+
+      <div *ngIf="librosService.libros().length === 0" class="text-center text-muted py-3">
+        <p>No hay libros registrados.</p>
+        <button class="btn btn-outline-secondary btn-sm mt-2" (click)="resetear()">Restaurar libros de prueba</button>
+      </div>
+
+      <ul class="list-group" *ngIf="librosService.libros().length > 0">
+        <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let libro of librosService.libros()">
+          {{ libro.titulo }}
+          <button class="btn btn-danger btn-sm" (click)="eliminar(libro.id)">ELIMINAR</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

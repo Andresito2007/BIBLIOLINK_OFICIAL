@@ -1,0 +1,30 @@
+h2 {
+  color: #3E2723;
+  font-weight: 700;
+}
+.table {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.table thead th {
+  background-color: #5C3D2E;
+  color: #f5f0eb;
+  border: none;
+}
+.table tbody tr:hover {
+  background-color: rgba(139, 94, 60, 0.08);
+}
+.btn-primary {
+  background-color: #5C3D2E;
+  border-color: #5C3D2E;
+}
+.btn-primary:hover {
+  background-color: #8B5E3C;
+  border-color: #8B5E3C;
+}
+.alert-info {
+  background-color: #fdf6f0;
+  border-color: #d4b896;
+  color: #5C3D2E;
+  border-radius: 12px;
+}

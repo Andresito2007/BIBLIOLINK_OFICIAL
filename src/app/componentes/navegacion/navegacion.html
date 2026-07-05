@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" routerLink="/inicio">
+      <img src="OIT.png" alt="Logo" width="36" height="36" class="me-2">BIBLIOLINK
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link px-3" routerLink="/inicio" routerLinkActive="active">INICIO</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-3" routerLink="/prestamos" routerLinkActive="active">PRESTAMOS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-3" routerLink="/mis-prestamos" routerLinkActive="active">MIS PRESTAMOS</a>
+        </li>
+        <!--si es admin es verdadero muestrale este enlace-->
+        <li *ngIf="authService.esAdmin()" class="nav-item">
+          <a class="nav-link px-3" routerLink="/administracion" routerLinkActive="active">ADMINISTRACION</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

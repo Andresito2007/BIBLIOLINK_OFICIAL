@@ -1,0 +1,52 @@
+
+<div class="login-container d-flex align-items-center justify-content-center">
+  <div class="card login-card p-4 shadow-sm">
+    <!--SI REGISTRO ES VERDADERO  MUESTRA CREAR CUENTA SI NO MUESTRA INICIO SESION (OPERADOR TERNARIO)-->    
+    <h2 class="text-center fw-bold mb-4 text-caramelo">
+      {{ esRegistro ? 'CREAR CUENTA' : 'INICIAR SESION' }}
+    </h2>
+    <form>
+      <!-- ngModel lo usamos pa poder vincularlo con nuestro code en login ts-->
+      <div class="mb-3" *ngIf="esRegistro">
+        <label class="form-label fw-semibold">NOMBRE</label>
+        <input type="text" class="form-control" [(ngModel)]="nombre" name="nombre" placeholder="ochupe ayma">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label fw-semibold">CORREO ELECTRONICO</label>
+        <input type="email" class="form-control" [(ngModel)]="correo" name="correo" placeholder="idatino78@gmail.com">
+      </div>
+      <div class="mb-3">
+        <label class="form-label fw-semibold">CONTRASEÑA</label>
+        <input type="password" class="form-control" [(ngModel)]="contrasena" name="contrasena" placeholder="micontraseña123">
+      </div>
+      <!--*ngIf lo usamos pa mostrar y ocultar el html cosas por una condicion.-->
+      <div *ngIf="esRegistro">
+        <div class="form-check form-switch mb-3">
+          <input class="form-check-input" type="checkbox" id="checkAdmin" [(ngModel)]="esAdmin" name="esAdmin">
+          <label class="form-check-label fw-semibold text-muted" for="checkAdmin">
+            REGISTRARME COMO ADMIN
+          </label>
+        </div>
+        
+        <div class="mb-3" *ngIf="esAdmin">
+          <label class="form-label fw-semibold text-danger">CLAVE ADMIN</label>
+          <input type="password" class="form-control border-danger" [(ngModel)]="codigoAdmin" name="codigoAdmin" placeholder="CODIGO PRIVADO">
+          <div class="form-text text-muted">ClAVE OBLIGATORIA PARA MODO ADMIN</div>
+        </div>
+      </div>
+      <div *ngIf="mensajeError" class="alert alert-danger py-2 mt-3 mb-0 text-center">
+        {{ mensajeError }}
+      </div>
+      <button type="button" class="btn btn-caramelo w-100 fw-bold my-3" (click)="Irinicio()">
+        {{ esRegistro ? "REGISTRARME" : "INGRESAR" }}
+      </button>
+      <!-- SECCION PA CAMBIAR ENTRE LOGIN Y REGISTRO -->
+      <div class="text-center mt-2">
+        <a href="javascript:void(0)" class="text-link" (click)="esRegistro = !esRegistro; esAdmin = false">
+          {{ esRegistro ? "¿YA TIENES CUENTA? INICIA SESION" : "¿NO TIENES UNA CUENTITA? REGISTRATE ACA" }}
+        </a>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+.login-container {
+  min-height: 80vh;
+  padding: 20px;
+}
+
+.login-card {
+  max-width: 420px;
+  width: 100%;
+  border-radius: 15px;
+  border: 1px solid #d4b896;
+  background-color: #ffffff;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.text-caramelo {
+  color: #5C3D2E;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.form-control:focus {
+  border-color: #8B5E3C;
+  box-shadow: 0 0 0 0.25rem rgba(139, 94, 60, 0.25);
+}
+
+.btn-caramelo {
+  background-color: #5C3D2E;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-caramelo:hover {
+  background-color: #8B5E3C;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.text-link {
+  color: #8B5E3C;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+  color: #5C3D2E;
+}
+
+.form-check-input:checked {
+  background-color: #8B5E3C;
+  border-color: #8B5E3C;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

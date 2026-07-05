@@ -1,0 +1,26 @@
+h2 {
+  color: #3E2723;
+  font-weight: 700;
+}
+h5 {
+  color: #5C3D2E;
+  font-weight: 600;
+}
+.btn-primary {
+  background-color: #5C3D2E;
+  border-color: #5C3D2E;
+}
+.btn-primary:hover {
+  background-color: #8B5E3C;
+  border-color: #8B5E3C;
+}
+.btn-danger {
+  font-size: 0.85rem;
+}
+.list-group-item {
+  border-left: 4px solid #d4b896;
+  transition: background-color 0.2s ease;
+}
+.list-group-item:hover {
+  background-color: #fdf6f0;
+}

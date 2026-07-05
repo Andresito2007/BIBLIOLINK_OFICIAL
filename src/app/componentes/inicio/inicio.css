@@ -1,0 +1,85 @@
+.text-center.my-5 {
+  background: linear-gradient(135deg, #5C3D2E 0%, #8B5E3C 100%);
+  color: #f5f0eb;
+  padding: 50px 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(92, 61, 46, 0.3);
+}
+.text-caramelo {
+  color: #d4b896;
+}
+
+h1 {
+  position: relative;
+  padding-bottom: 15px;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: #d4b896;
+  border-radius: 2px;
+}
+
+h2 {
+  color: #3E2723;
+  font-weight: 700;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #d4b896;
+  border-radius: 12px;
+  overflow: hidden;
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(92, 61, 46, 0.2);
+}
+
+.card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+.card-title {
+  color: #5C3D2E;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.card-text {
+  color: #6b5e53;
+  font-size: 0.9rem;
+}
+
+.card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.card:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
